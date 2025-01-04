@@ -27,7 +27,7 @@ export function OrderDetails() {
           <TableBody>
             <TableRow>
               <TableCell className="text-muted-foreground">Status</TableCell>
-              <TableCell className="jutify-end flex">
+              <TableCell className="flex justify-end">
                 <div className="flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-slate-400" />
                   <span className="font-medium text-muted-foreground">
@@ -39,19 +39,19 @@ export function OrderDetails() {
 
             <TableRow>
               <TableCell className="text-muted-foreground">Cliente</TableCell>
-              <TableCell className="jutify-end flex">
+              <TableCell className="flex justify-end">
                 Diego Schell Fernandes
               </TableCell>
             </TableRow>
 
             <TableRow>
               <TableCell className="text-muted-foreground">Telefone</TableCell>
-              <TableCell className="jutify-end flex">(43) 9988-7766</TableCell>
+              <TableCell className="flex justify-end">(43) 9988-7766</TableCell>
             </TableRow>
 
             <TableRow>
               <TableCell className="text-muted-foreground">E-mail</TableCell>
-              <TableCell className="jutify-end flex">
+              <TableCell className="flex justify-end">
                 diego@rocketseat.com.br
               </TableCell>
             </TableRow>
@@ -59,7 +59,7 @@ export function OrderDetails() {
             <TableCell className="text-muted-foreground">
               Realizado há
             </TableCell>
-            <TableCell className="jutify-end flex">há 3 minutos</TableCell>
+            <TableCell className="flex justify-end">há 3 minutos</TableCell>
           </TableBody>
         </Table>
 

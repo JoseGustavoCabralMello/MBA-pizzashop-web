@@ -17,6 +17,7 @@ export function OrderTableRow() {
               <span className="sr-only">Detalhes do pedido</span>
             </Button>
           </DialogTrigger>
+
           <OrderDetails />
         </Dialog>
       </TableCell>
