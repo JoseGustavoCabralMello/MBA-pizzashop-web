@@ -1,5 +1,4 @@
 import { zodResolver } from '@hookform/resolvers/zod'
-import { DialogDescription, DialogTitle } from '@radix-ui/react-dialog'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
@@ -9,14 +8,16 @@ import {
   getManagedRestaurant,
   GetManagedRestaurantResponse,
 } from '@/api/get-managed-restaurant'
-import { updateProfile } from '@/api/updte-profile'
+import { updateProfile } from '@/api/update-profile'
 
 import { Button } from './ui/button'
 import {
   DialogClose,
   DialogContent,
+  DialogDescription,
   DialogFooter,
   DialogHeader,
+  DialogTitle,
 } from './ui/dialog'
 import { Input } from './ui/input'
 import { Label } from './ui/label'
@@ -61,7 +62,7 @@ export function StoreProfileDialog() {
 
       if (cached) {
         queryClient.setQueryData<GetManagedRestaurantResponse>(
-          ['managed-resturant'],
+          ['managed-restaurant'],
           {
             ...cached,
             name,
@@ -79,16 +80,16 @@ export function StoreProfileDialog() {
         description: data.description,
       })
 
-      toast.success('Perfil atualozado co sucesso!')
+      toast.success('Perfil atualizado com sucesso!')
     } catch {
-      toast.error('Falha ao autalizar o perfil, tente novamente!')
+      toast.error('Falha ao atualizar o perfil, tente novamente!')
     }
   }
 
   return (
     <DialogContent>
       <DialogHeader>
-        <DialogTitle>Perfil de loja</DialogTitle>
+        <DialogTitle>Perfil da loja</DialogTitle>
         <DialogDescription>
           Atualize as informações do seu estabelecimento visíveis ao seu cliente
         </DialogDescription>
@@ -102,16 +103,14 @@ export function StoreProfileDialog() {
             </Label>
             <Input className="col-span-3" id="name" {...register('name')} />
           </div>
-        </div>
 
-        <div className="space-y-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4">
             <Label className="text-right" htmlFor="descrption">
               Descrição
             </Label>
             <Textarea
               className="col-span-3"
-              id="descrption"
+              id="description"
               {...register('description')}
             />
           </div>
@@ -119,7 +118,9 @@ export function StoreProfileDialog() {
 
         <DialogFooter>
           <DialogClose asChild>
-            <Button variant="ghost">Cancelar</Button>
+            <Button variant="ghost" type="button">
+              Cancelar
+            </Button>
           </DialogClose>
           <Button type="submit" variant="success" disabled={isSubmitting}>
             Salvar
