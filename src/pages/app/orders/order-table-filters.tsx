@@ -74,13 +74,13 @@ export function OrderTableFilters() {
 
       return state
     })
-  }
 
-  reset({
-    orderId: '',
-    customerName: '',
-    status: 'all',
-  })
+    reset({
+      orderId: '',
+      customerName: '',
+      status: 'all',
+    })
+  }
 
   return (
     <form
