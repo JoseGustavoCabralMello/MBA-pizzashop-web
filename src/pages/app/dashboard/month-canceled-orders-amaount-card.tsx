@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 export function MonthCanceledOrdersAmountCard() {
   const { data: monthCanceledOrdersAmount } = useQuery({
     queryFn: getMonthCanceledOrdersAmount,
-    queryKey: ['metrics', 'day-orders-amount'],
+    queryKey: ['metrics', 'month-canceled-orders-amount'],
   })
 
   return (
@@ -25,17 +25,17 @@ export function MonthCanceledOrdersAmountCard() {
               {monthCanceledOrdersAmount.amount.toLocaleString('pt-BR')}
             </span>
             <p className="text-xs text-muted-foreground">
-              {monthCanceledOrdersAmount.diffFromLastmonth < 0 ? (
+              {monthCanceledOrdersAmount.diffFromLastMonth < 0 ? (
                 <>
                   <span className="text-emerald-500 dark:text-emerald-400">
-                    {monthCanceledOrdersAmount.diffFromLastmonth}%
+                    {monthCanceledOrdersAmount.diffFromLastMonth}%
                   </span>{' '}
                   em relação ao mês passado
                 </>
               ) : (
                 <>
                   <span className="text-rose-500 dark:text-rose-400">
-                    +{monthCanceledOrdersAmount.diffFromLastmonth}%
+                    +{monthCanceledOrdersAmount.diffFromLastMonth}%
                   </span>{' '}
                   em relação ao mês passado
                 </>

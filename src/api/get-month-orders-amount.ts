@@ -2,7 +2,7 @@ import { api } from '@/lib/axios'
 
 export interface GetMonthOrdersAmountResponse {
   amount: number
-  diffFromLastmonth: number
+  diffFromLastMonth: number
 }
 
 export async function getMonthOrdersAmount() {
