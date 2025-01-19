@@ -6,7 +6,7 @@ import { RouterProvider } from 'react-router-dom'
 import { Toaster } from 'sonner'
 
 import { ThemeProvider } from './components/theme/theme-provider'
-import { queryCliet } from './lib/react-query'
+import { queryClient } from './lib/react-query'
 import { router } from './routes'
 
 export function App() {
@@ -15,7 +15,7 @@ export function App() {
       <ThemeProvider storageKey="pizzashop-theme" defaultTheme="dark">
         <Helmet titleTemplate="%s | pizza.shop" />
         <Toaster richColors />
-        <QueryClientProvider client={queryCliet}>
+        <QueryClientProvider client={queryClient}>
           <RouterProvider router={router} />
         </QueryClientProvider>
       </ThemeProvider>
