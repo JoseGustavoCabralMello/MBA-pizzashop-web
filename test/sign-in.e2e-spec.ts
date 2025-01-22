@@ -7,7 +7,7 @@ test('sig in successfully', async ({ page }) => {
   await page.getByRole('button', { name: 'Acessar painel' }).click()
 
   const toast = page.getByText(
-    'Enviamos um link de autenticação no seu e-mial.',
+    'Enviamos um link de autenticação no seu e-mail.',
   )
 
   expect(toast).toBeVisible()
