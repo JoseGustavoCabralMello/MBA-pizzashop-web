@@ -7,7 +7,7 @@ test('update profile successfully', async ({ page }) => {
   await page.getByRole('menuitem', { name: 'Perfil da loja' }).click()
 
   await page.getByLabel('Nome').fill('Rocket Pizza')
-  await page.getByLabel('Desdription').fill('Another Description')
+  await page.locator('#description').fill('Another Description')
 
   await page.getByRole('button', { name: 'Salvar' }).click()
 
